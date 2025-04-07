@@ -1,0 +1,100 @@
+Language/Currency Links in Header
+Version 4.0.4 for Zen Cart v2.0.0
+11th of May 2024
+Bootsrap template files for v3.7
+
+Designed by: Neville Kerr
+Updated to version 2.0 by: Twitchtoo Media
+Updated to version 3.0 by: Benny Philibel
+Updated to version 4.0 by: Pilou2/Piloujp
+
+
+I've updated the instructions and file set to Zen Cart v2.0.0 and php v8.x.
+It now installs into the template default AND responsive_classic directory.  This means it will be available to all templates that come with the standard Zen Cart available for download.
+File for Bootstrap template has been added. Its structure is quite different from the two other templates.
+css files from previous version has been removed which simplify things but css id 'head-link' has been added to currencies links. It is easier like this to change font, color or other attribute by adding a css file like it has been done for Bootstrap template.
+If you're using a custom template, please copy and change the folder name from "responsive_classic" or which ever your template is based on, to the name of YOUR_TEMPLATE.
+
+========================================================
+
+WHAT DOES THIS MODULE DO?
+
+This module allows you to display the language icons (flags) and currency symbols that are set in you cart admin as links in the navigation section of your header. 'In use' language or currency is not displayed, only optional ones you can switch to. That means you need to set at least one extra language or currency.
+Header display can be turned on/off from Admin > Configuration > Layout Settings.
+
+========================================================
+
+
+Please backup your files, SQL database THEN merge the contents of this module with your current Zen Cart files.
+
+
+INSTALLATION
+
+Step 1:
+	Extract all the files from the zip file.
+
+Step 2:
+Warning: if you are not using the standard files the following files should be merged as they WILL overwrite the core files. You can merge only the one for the template you use.
+
+	../includes/templates/template_default/common/tpl_header.php   This one is used by default when template specific file is missing like in Classic template.
+	../includes/templates/responsive_classic/common/tpl_header.php 	
+	../includes/templates/bootstrap/common/tpl_header.php 	
+	
+Step 3:
+Upload (copy) these new files to your server.
+	../images/icons/*.png
+	../includes/modules/header_currencies.php
+	../includes/modules/header_languages.php
+	../includes/templates/template_default/common/tpl_header_currencies.php
+	../includes/templates/template_default/common/tpl_header_languages.php
+	../includes/templates/template_default/css/stylesheet_lang-cur_header.css
+	../includes/templates/classic/css/stylesheet_lang-cur_header.css
+	../includes/templates/responsive_classic/css/stylesheet_lang-cur_header.css
+	../includes/templates/bootstrap/css/stylesheet_lang-cur_header.css   for Bootstrap template only!
+
+Step 4:
+	SQL Update:
+To enter the new configuration keys into your database.
+
+==> Go to Admin > Tools > Install SQL Patches
+
+Paste the following code into the query box or upload SQL file 'install.sql' (it is in sql folder):
+
+------------------------------------------------------
+INSERT INTO configuration (configuration_title, configuration_key, configuration_value, configuration_description, configuration_group_id, sort_order, last_modified, date_added, use_function, set_function) VALUES ('Show Languages in Header?', 'HEADER_LANGUAGES_DISPLAY', 'true', 'Display the Languages flags/links in Header?', 19, 170, NULL, now(), NULL, 'zen_cfg_select_option(array(''true'', ''false''), ');
+INSERT INTO configuration (configuration_title, configuration_key, configuration_value, configuration_description, configuration_group_id, sort_order, last_modified, date_added, use_function, set_function) VALUES ('Show Currencies in Header?', 'HEADER_CURRENCIES_DISPLAY', 'true', 'Display the Currencies symbols/links in Header?', 19, 171, NULL, now(), NULL, 'zen_cfg_select_option(array(''true'', ''false''), ');
+------------------------------------------------------
+
+Click the Send button to run the query. Aternatively you can use sql file provided (install.sql) with other tools if you prefer.
+
+You will now find two new settings at the bottom of the page at:
+==> Admin > Configuration > Layout Settings
+Where you can turn on/off the language flag or currency symbol links.
+
+To check the effect of the plugin: go to the customer side of your Zen Cart and reload the page.
+
+========================================================
+
+To Remove/Undo the modification:
+
+Run the following query from Admin > Tools > Install SQL Patches or us uninstall.sql file to remove the configuration keys from the database:
+
+DELETE FROM configuration WHERE configuration_key = 'HEADER_LANGUAGES_DISPLAY';
+DELETE FROM configuration WHERE configuration_key = 'HEADER_CURRENCIES_DISPLAY';
+
+Remove the files included in the original file set from your server, making certain you replace with your backed up version of includes/templates/template_default/common/tpl_header.php and other merged files.
+
+=========================================================
+
+
+History:
+04/06/2025 - Release v4.1.0 for 2.0.0 (Boostrap v3.7) with improved CSS dropdown menus that display well on mobiles phones.
+05/11/2024 - Release v4.0.4 for 2.0.0 (Boostrap v3.7)
+10/28/2023 - Release v4.0.3 for 1.5.8a
+05/24/2023 - Release v4.0.2 for 1.5.8a
+02/27/2023 - Release v4.0 for 1.5.8a
+03/30/2021 - Release v3.0 for 1.5.7c
+03/12/2018 - Release v2.0 for 1.55f
+05/31/2006 - Initial Release v1.0
+
+========================================================

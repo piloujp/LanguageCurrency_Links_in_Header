@@ -1,0 +1,79 @@
+ /* Dropdown Button */
+.curbtn {
+  background-color: #333333;
+  color: white;
+  border: none;
+  padding: 0px 6px;
+}
+
+ /* Dropdown Button */
+.lanbtn {
+  background-color: #333333;
+  color: white;
+  border: none;
+  padding: 0px 6px;
+}
+
+/* The container <div> - needed to position the currency header dropdown content */
+.currency-header {
+  position: relative;
+  display: contents;
+}
+
+/* The container <div> - needed to position the language header dropdown content */
+.language-header {
+  position: relative;
+  display: contents;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.currency-header-content {
+  display: none;
+  position: absolute;
+  background-color: #333333;
+  min-width: 24px;
+  padding: 2px 4px;
+  width: auto;
+  z-index: 1;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.language-header-content {
+  display: none;
+  position: absolute;
+  background-color: #333333;
+  min-width: 24px;
+  padding: 2px 2px;
+  width: auto;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.currency-header-content a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+/* Links inside the dropdown */
+.language-header-content a {
+  color: white;
+  padding: 2px 4px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.currency-header-content a:hover {background-color: #ddd;}
+/* Change color of dropdown links on hover */
+.language-header-content a:hover {opacity: 60%;}
+
+/* Show the dropdown menu on hover */
+.currency-header:hover .currency-header-content {display: flex;flex-flow: column wrap;}
+/* Show the dropdown menu on hover */
+.language-header:hover .language-header-content {display: flex;flex-flow: column wrap;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.currency-header:hover .curbtn {opacity: 60%;} 
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.language-header:hover .lanbtn {opacity: 60%;} 
