@@ -5,7 +5,7 @@
  * @copyright Copyright 2003-2022 Zen Cart Development Team
  * @copyright Portions Copyright 2003 osCommerce
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
- * @version $Id: John 2022 Jul 07 Modified in v1.5.8-alpha $
+ * @version $Id: piloujp 2024 May 11 Modified in v2.0.0 $
  */
 ?>
 
@@ -55,10 +55,10 @@ if (isset($flag_disable_header) && $flag_disable_header === true) {
 <!-- languages/currencies link header display -->
     <li class="last">
 <?php 
-	if (HEADER_LANGUAGES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_languages.php');
-	if (HEADER_CURRENCIES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_currencies.php');
+    if (HEADER_LANGUAGES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_languages.php');
+    if (HEADER_CURRENCIES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_currencies.php');
 ?>
-	</li>
+    </li>
 <!-- eof  languages/currencies link header display -->  
 
 </ul>

@@ -24,7 +24,7 @@
 
       reset($currencies->currencies);
       $currencies_array = array();
-	  foreach($currencies->currencies as $key => $value) {
+      foreach($currencies->currencies as $key => $value) {
         $currencies_array[] = array('id' => $key, 'text' => (zen_not_null($value['symbol_left']) ? $value['symbol_left'] : $value['symbol_right']) );
       }
 

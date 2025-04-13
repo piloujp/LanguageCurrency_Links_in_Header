@@ -13,7 +13,7 @@
  * @copyright Copyright 2003-2024 Zen Cart Development Team
  * @copyright Portions Copyright 2003 osCommerce
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
- * @version $Id: Nick Fenwick 2023 Jul 04 Modified in v2.0.0-alpha1 $
+ * @version $Id: PilouJP 2024 May 11 Modified in v2.0.0 $
  */
 ?>
 
@@ -59,10 +59,10 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
 <!-- languages/currencies link header display -->
     <li class="last">
 <?php 
-	if (HEADER_LANGUAGES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_languages.php');
-	if (HEADER_CURRENCIES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_currencies.php');
+    if (HEADER_LANGUAGES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_languages.php');
+    if (HEADER_CURRENCIES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_currencies.php');
 ?>
-	</li>
+    </li>
 <!-- eof  languages/currencies link header display -->  
 
     <li><?php echo '<a href="' . HTTP_SERVER . DIR_WS_CATALOG . '">'; ?><i class="fa-solid fa-house" title="Home"></i></a></li>
@@ -115,7 +115,7 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
     <li><a href="<?php echo zen_href_link(FILENAME_LOGOFF, '', 'SSL'); ?>"><?php echo HEADER_TITLE_LOGOFF; ?></a></li>
 <?php if ($_SESSION['cart']->count_contents() != 0) { ?>
 <li><a href="<?php echo zen_href_link(FILENAME_ACCOUNT, '', 'SSL'); ?>"><?php echo HEADER_TITLE_MY_ACCOUNT; ?></a></li>
-	    <?php } else { ?>
+        <?php } else { ?>
 <li class="last"><a href="<?php echo zen_href_link(FILENAME_ACCOUNT, '', 'SSL'); ?>"><?php echo HEADER_TITLE_MY_ACCOUNT; ?></a></li>
 
       <?php } ?>
@@ -125,10 +125,10 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
 ?>
 <?php if ($_SESSION['cart']->count_contents() != 0) { ?>
     <li><a href="<?php echo zen_href_link(FILENAME_LOGIN, '', 'SSL'); ?>"><?php echo HEADER_TITLE_LOGIN; ?></a></li>
-	    <?php } else { ?>
+        <?php } else { ?>
     <li class="last"><a href="<?php echo zen_href_link(FILENAME_LOGIN, '', 'SSL'); ?>"><?php echo HEADER_TITLE_LOGIN; ?></a></li>
 
-	    <?php } ?>
+        <?php } ?>
 <?php } } ?>
 
 <?php if ($_SESSION['cart']->count_contents() != 0) { ?>
@@ -169,7 +169,7 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
 ?>
 <?php if ($_SESSION['cart']->count_contents() != 0) { ?>
     <li><a href="<?php echo zen_href_link(FILENAME_LOGIN, '', 'SSL'); ?>"><?php echo HEADER_TITLE_LOGIN; ?></a></li>
-	    <?php } else { ?>
+        <?php } else { ?>
     <li class="last"><a href="<?php echo zen_href_link(FILENAME_LOGIN, '', 'SSL'); ?>"><?php echo HEADER_TITLE_LOGIN; ?></a></li>
 <?php } ?>
 <?php
@@ -192,10 +192,10 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
 <!-- languages/currencies link header display -->
     <li class="last">
 <?php 
-	if (HEADER_LANGUAGES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_languages.php');
-	if (HEADER_CURRENCIES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_currencies.php');
+    if (HEADER_LANGUAGES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_languages.php');
+    if (HEADER_CURRENCIES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_currencies.php');
 ?>
-	</li>
+    </li>
 <!-- eof  languages/currencies link header display -->  
   </ul>
 <div id="navMainSearch" class="forward">
