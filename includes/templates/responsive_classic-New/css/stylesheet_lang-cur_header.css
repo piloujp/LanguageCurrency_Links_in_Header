@@ -1,47 +1,52 @@
+/* The container - needed to position the currency header dropdown content */
+.currency-header {
+  position: relative;
+  display: block;
+  padding: 10px 0px;
+}
+.currency-header-hamburg {
+  position: relative;
+  display: block;
+  padding-left: 10px;
+}
+
+/* The container - needed to position the language header dropdown content */
+.language-header {
+  position: relative;
+  display: block;
+  min-width: 24px;
+  padding: 10px 0px;
+}
+.language-header-hamburg {
+  position: relative;
+  display: block;
+  min-width: 24px;
+}
+
  /* Dropdown Button */
 .curbtn {
-  background-color: #609d60;
-  background: rgba(96, 157, 96, 0.1);
-  color: white;
+  display: contents;
+  background-color: white;
+  color: black;
   border: none;
+  padding: 10px 0px;
 }
 
  /* Dropdown Button */
 .lanbtn {
-  background-color: #609d60;
-  background: rgba(96, 157, 96, 0.1);
-  color: white;
+  display: contents;
+  background-color: white;
+  color: black;
   border: none;
-}
-
-/* The container <div> - needed to position the currency header dropdown content */
-.currency-header {
-  position: relative;
-  display: inline-block;
-}
-.currency-header-hamburg {
-  position: relative;
-  display: inline-block;
-}
-
-/* The container <div> - needed to position the language header dropdown content */
-.language-header {
-  position: relative;
-  display: inline-block;
-}
-.language-header-hamburg {
-  position: relative;
-  display: inline-block;
+  padding: 10px 0px;
 }
 
 /* Dropdown Content (Hidden by Default) */
 .currency-header-content {
   display: none;
   position: absolute;
-  background-color: #609d60;
+  background-color: #fff8dc;
   min-width: 24px;
-  padding: 2px 2px;
-  width: auto;
   z-index: 1;
 }
 
@@ -49,17 +54,14 @@
 .language-header-content {
   display: none;
   position: absolute;
-  background-color: #609d60;
+  background-color: #fff8dc;
   min-width: 24px;
-  padding: 5px 2px;
-  width: auto;
   z-index: 1;
 }
 
 /* Links inside the dropdown */
 .currency-header-content a {
   color: black;
-  padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
@@ -67,15 +69,15 @@
 /* Links inside the dropdown */
 .language-header-content a {
   color: black;
-  padding: 12px 16px;
+  padding: 5px 0px;
   text-decoration: none;
   display: block;
 }
 
 /* Change color of dropdown links on hover */
-.currency-header-content a:hover {background-color: #85c285;}
+.currency-header-content a:hover {background-color: #faebd7;}
 /* Change color of dropdown links on hover */
-.language-header-content a:hover {opacity: 80%;}
+.language-header-content a:hover {background-color: #faebd7;}
 
 /* Show the dropdown menu on hover */
 .currency-header:hover .currency-header-content {display: block;}

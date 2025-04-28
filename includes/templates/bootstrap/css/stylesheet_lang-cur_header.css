@@ -19,11 +19,19 @@
   position: relative;
   display: contents;
 }
+.currency-header-hamburg {
+  position: relative;
+  display: block;
+}
 
 /* The container <div> - needed to position the language header dropdown content */
 .language-header {
   position: relative;
   display: contents;
+}
+.language-header-hamburg {
+  position: relative;
+  display: block;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -70,10 +78,14 @@
 
 /* Show the dropdown menu on hover */
 .currency-header:hover .currency-header-content {display: flex;flex-flow: column wrap;}
+.currency-header-hamburg:hover .currency-header-content {display: flex;flex-flow: column wrap;}
 /* Show the dropdown menu on hover */
 .language-header:hover .language-header-content {display: flex;flex-flow: column wrap;}
+.language-header-hamburg:hover .language-header-content {display: flex;flex-flow: column wrap;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .currency-header:hover .curbtn {opacity: 60%;} 
+.currency-header-hamburg:hover .curbtn {opacity: 60%;} 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .language-header:hover .lanbtn {opacity: 60%;} 
+.language-header-hamburg:hover .lanbtn {opacity: 60%;} 

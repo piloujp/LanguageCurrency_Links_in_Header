@@ -68,11 +68,17 @@ if ($_SESSION['cart']->count_contents() > 0) {
 
 require $template->get_template_dir('tpl_offcanvas_menu.php', DIR_WS_TEMPLATE, $current_page_base, 'common') . '/tpl_offcanvas_menu.php';
 ?>
-<!-- languages/currencies link header display -->
-						<li class="nav-link d-none d-lg-block"><?php if (HEADER_LANGUAGES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_languages.php');?>
-						</li>
-						<li class="nav-link d-none d-lg-block"><?php if (HEADER_CURRENCIES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_currencies.php');?>
-						</li>
+<!-- languages/currencies link header display - Main header-->
+                        <li class="nav-link d-none d-lg-block ">
+                          <div class="language-header">
+                          <?php if (HEADER_LANGUAGES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_languages.php');?>
+                          </div>
+                        </li>
+                        <li class="nav-link d-none d-lg-block">
+                          <div class="currency-header">
+                          <?php if (HEADER_CURRENCIES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_currencies.php');?>
+                          </div>
+                        </li>
 <!-- eof  languages/currencies header display --> 
                     </ul>
 <?php
@@ -80,9 +86,11 @@ require DIR_WS_MODULES . zen_get_module_sidebox_directory('search_header.php');
 ?>
                 </div>
 <!-- languages/currencies link header display -->
-                <div class="nav-item d-lg-none"><?php if (HEADER_LANGUAGES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_languages.php');?>
+                <div class="language-header-hamburg nav-item d-lg-none">
+                <?php if (HEADER_LANGUAGES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_languages.php');?>
                 </div>
-                <div class="nav-item d-lg-none"><?php if (HEADER_CURRENCIES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_currencies.php');?>
+                <div class="currency-header-hamburg nav-item d-lg-none">
+                <?php if (HEADER_CURRENCIES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_currencies.php');?>
                 </div>
 <!-- eof  languages/currencies header display --> 
             </nav>

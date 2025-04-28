@@ -23,7 +23,7 @@
     if (isset($currencies) && is_object($currencies)) {
 
       reset($currencies->currencies);
-      $currencies_array = array();
+      $currencies_array = [];
       foreach($currencies->currencies as $key => $value) {
         $currencies_array[] = array('id' => $key, 'text' => (zen_not_null($value['symbol_left']) ? $value['symbol_left'] : $value['symbol_right']) );
       }

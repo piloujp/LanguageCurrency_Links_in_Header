@@ -57,11 +57,13 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
   <ul>
 
 <!-- languages/currencies link header display -->
-    <li class="last">
-<?php 
-    if (HEADER_LANGUAGES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_languages.php');
-    if (HEADER_CURRENCIES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_currencies.php');
-?>
+    <li>
+      <div class="language-header-hamburg">
+        <?php if (HEADER_LANGUAGES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_languages.php');?>
+      </div>
+      <div class="currency-header-hamburg">
+        <?php if (HEADER_CURRENCIES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_currencies.php');?>
+      </div>
     </li>
 <!-- eof  languages/currencies link header display -->  
 
@@ -191,10 +193,12 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
 <?php }?>
 <!-- languages/currencies link header display -->
     <li class="last">
-<?php 
-    if (HEADER_LANGUAGES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_languages.php');
-    if (HEADER_CURRENCIES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_currencies.php');
-?>
+    <div class="language-header">
+        <?php if (HEADER_LANGUAGES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_languages.php');?>
+    </div>
+    <div class="currency-header">
+        <?php if (HEADER_CURRENCIES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_currencies.php');?>
+    </div>
     </li>
 <!-- eof  languages/currencies link header display -->  
   </ul>
