@@ -56,12 +56,12 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
 <div id="navMain">
   <ul>
 
-<!-- languages/currencies link header display -->
+<!-- languages/currencies link header display (mobile)-->
     <li>
-      <div class="language-header-hamburg">
+      <div class="language-header">
         <?php if (HEADER_LANGUAGES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_languages.php');?>
       </div>
-      <div class="currency-header-hamburg">
+      <div class="currency-header">
         <?php if (HEADER_CURRENCIES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_currencies.php');?>
       </div>
     </li>
@@ -192,14 +192,16 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
     <li class="last"><a href="<?php echo zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'); ?>"><?php echo HEADER_TITLE_CHECKOUT; ?></a></li>
 <?php }?>
 <!-- languages/currencies link header display -->
-    <li class="last">
-    <div class="language-header">
-        <?php if (HEADER_LANGUAGES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_languages.php');?>
-    </div>
-    <div class="currency-header">
-        <?php if (HEADER_CURRENCIES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_currencies.php');?>
-    </div>
-    </li>
+    <?php if (HEADER_LANGUAGES_DISPLAY == 'true' && count($lng->catalog_languages) > 1) {
+        echo '<li class="last">' . PHP_EOL . '<div class="language-header">' . PHP_EOL;
+        require(DIR_WS_MODULES . 'header_languages.php');
+        echo '</div>' . PHP_EOL;
+    }
+    if (HEADER_CURRENCIES_DISPLAY == 'true' && count($currencies->currencies) > 1) {
+        echo '<div class="currency-header">' . PHP_EOL;
+        require(DIR_WS_MODULES . 'header_currencies.php');
+        echo '</div>' . PHP_EOL . '</li>';
+    }?>
 <!-- eof  languages/currencies link header display -->  
   </ul>
 <div id="navMainSearch" class="forward">

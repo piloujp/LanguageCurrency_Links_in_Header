@@ -37,7 +37,7 @@ Step 2:
 Warning: if you are not using the standard files the following files should be merged as they WILL overwrite the core files. You can merge only the one for the template you use.
 
 	../includes/templates/template_default/common/tpl_header.php   This one is used by default when template specific file is missing like in Classic template.
-	../includes/templates/responsive_classic/common/tpl_header.php 	
+	../includes/templates/responsive_classic/common/tpl_header.php 	You can use instead the one for the new version of this template here: ../includes/templates/responsive_classic-New/common/tpl_header.php
 	../includes/templates/bootstrap/common/tpl_header.php 	
 	
 Step 3:
@@ -49,7 +49,7 @@ Upload (copy) these new files to your server.
 	../includes/templates/template_default/common/tpl_header_languages.php
 	../includes/templates/template_default/css/stylesheet_lang-cur_header.css
 	../includes/templates/classic/css/stylesheet_lang-cur_header.css
-	../includes/templates/responsive_classic/css/stylesheet_lang-cur_header.css
+	../includes/templates/responsive_classic/css/stylesheet_lang-cur_header.css OR the new template version ../includes/templates/responsive_classic-New/css/stylesheet_lang-cur_header.css and ../includes/templates/responsive_classic-New/css/stylesheet_zzcustom_override.css
 	../includes/templates/bootstrap/css/stylesheet_lang-cur_header.css   for Bootstrap template only!
 
 Step 4:

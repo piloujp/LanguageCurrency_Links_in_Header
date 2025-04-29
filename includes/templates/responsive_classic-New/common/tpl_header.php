@@ -118,11 +118,12 @@ if (isset($flag_disable_header) && $flag_disable_header === true) {
 
       <li><?php echo ' <a href="' . zen_href_link(FILENAME_CONTACT_US, '', 'SSL') . '">'; ?><i class="fa fa-xl fa-fw fa-phone fa-flip-horizontal" aria-hidden="true">&nbsp;</i> Contact</a></li>
 <!-- languages/currencies link header display -->
-      <li class="language-header-hamburg">
+      <li><div class="language-header-hamburg">
           <?php if (HEADER_LANGUAGES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_languages.php');?>
-        </li>
-        <li  class="currency-header-hamburg">
+        </div>
+        <div  class="currency-header-hamburg">
           <?php if (HEADER_CURRENCIES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_currencies.php');?>
+        </div>
       </li>
 <!-- eof  languages/currencies link header display -->  
   </ul>
@@ -163,12 +164,16 @@ if (isset($flag_disable_header) && $flag_disable_header === true) {
     <i class="fa fa-envelope spacer1 navitem2t" aria-hidden="true" role="img" aria-label="Contact icon">&nbsp;</i></a>  
 
 <!-- languages/currencies link header display -->
-    <div class="language-header">
-        <?php if (HEADER_LANGUAGES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_languages.php');?>
-    </div>
-    <div class="currency-header">
-        <?php if (HEADER_CURRENCIES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_currencies.php');?>
-    </div>
+    <?php if (HEADER_LANGUAGES_DISPLAY == 'true' && count($lng->catalog_languages) > 1) {
+        echo '<div class="language-header">' . PHP_EOL;
+        require(DIR_WS_MODULES . 'header_languages.php');
+        echo '</div>' . PHP_EOL;
+    }
+    if (HEADER_CURRENCIES_DISPLAY == 'true' && count($currencies->currencies) > 1) {
+        echo '<div class="currency-header">' . PHP_EOL;
+        require(DIR_WS_MODULES . 'header_currencies.php');
+        echo '</div>' . PHP_EOL;
+    }?>
 <!-- eof  languages/currencies link header display -->  
     
     <a href="<?php echo zen_href_link(FILENAME_SHOPPING_CART, '', 'NONSSL'); ?>" aria-label="<?php echo BOX_HEADING_SHOPPING_CART; ?>">
