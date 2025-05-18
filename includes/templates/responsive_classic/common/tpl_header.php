@@ -65,7 +65,7 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa-solid 
         <?php if (HEADER_CURRENCIES_DISPLAY == 'true') require(DIR_WS_MODULES . 'header_currencies.php');?>
       </div>
     </li>
-<!-- eof  languages/currencies link header display -->  
+<!-- eof  languages/currencies link header display -->
 
     <li><?php echo '<a href="' . HTTP_SERVER . DIR_WS_CATALOG . '">'; ?><i class="fa-solid fa-house" title="Home"></i></a></li>
     <li><a href="#top"><i class="fa-solid fa-circle-arrow-up" title="Back to Top"></i></a></li>

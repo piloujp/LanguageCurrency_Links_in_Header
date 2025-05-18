@@ -19,7 +19,7 @@
             }
         }
         $content .= '</div>' . PHP_EOL;
-        
+
     } elseif (count($currencies->currencies) > 1) {
         foreach ($currencies->currencies as $key => $value) {
             if ($key != $_SESSION['currency']) {

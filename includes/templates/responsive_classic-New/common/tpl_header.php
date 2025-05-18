@@ -34,9 +34,9 @@ if (isset($flag_disable_header) && $flag_disable_header === true) {
   return;
 }
 ?>
- 
+
  <a href="<?php echo $_SERVER['REQUEST_URI']; ?>#main-content" class="skip-link">Skip to main content</a>
- 
+
 <div class="welcome_note">Welcome to Zencart check out the getting started guide at 
   <a href="https://docs.zen-cart.com/user/" target="_blank" class="welcome_link"  rel="noopener"> doc.zencart.com</a>
 </div>
@@ -46,7 +46,7 @@ if (isset($flag_disable_header) && $flag_disable_header === true) {
 <!-- sidebar navigation -->
 <div class="nav_spacer"> 
 <!-- Hamburger Icon Button -->
-  
+
 <div class="row">
   <div class="col">
     <!-- Change <a> to <button> to prevent any unwanted page navigation -->
@@ -57,28 +57,28 @@ if (isset($flag_disable_header) && $flag_disable_header === true) {
 </div>
 <div class="sidebar is-hidden">
   <h1 class="sidebar_title">Categories</h1>
-  
-  
+
+
       <?php
       // load the UL-generator class and produce the menu list dynamically from there
       require_once (DIR_WS_CLASSES . 'categories_ul_generator.php');
       $zen_CategoriesUL = new zen_categories_ul_generator();
- 
+
       // Get just the first top-level categories
       $menulist = $zen_CategoriesUL->buildTree(true, 1);
      echo $menulist;
     ?> 
-    
+
 <hr class="spacernav" />
 
     <ul class="myaccounts">
       <li><?php echo '<a href="' . HTTP_SERVER . DIR_WS_CATALOG . '">'; ?><i class="fa fa-xl fa-fw fa-home" aria-hidden="true">&nbsp;</i> <?php echo HEADER_TITLE_CATALOG; ?></a></li>
-      
+
       <?php
           if (zen_is_logged_in() && !zen_in_guest_checkout()) {
       ?>
       <li><a href="<?php echo zen_href_link(FILENAME_LOGOFF, '', 'SSL'); ?>"><i class="fa fa-xl fa-fw fa-sign-out" aria-hidden="true"></i> <?php echo HEADER_TITLE_LOGOFF; ?></a></li><?php if ($_SESSION['cart']->count_contents() != 0) { ?>
-      
+
       <li><a href="<?php echo zen_href_link(FILENAME_ACCOUNT, '', 'SSL'); ?>"><i class="fa-solid fa-xl fa-fw fa-user"></i> <?php echo HEADER_TITLE_MY_ACCOUNT; ?></a></li>
         <?php } else { ?>
         <li class=""><a href="<?php echo zen_href_link(FILENAME_ACCOUNT, '', 'SSL'); ?>"><i class="fa-solid fa-xl fa-fw fa-user"></i> <?php echo HEADER_TITLE_MY_ACCOUNT; ?></a></li>
@@ -154,12 +154,12 @@ if (isset($flag_disable_header) && $flag_disable_header === true) {
 <div class="search_box"> 
    <?php require(DIR_WS_MODULES . zen_get_module_sidebox_directory('search_header.php')); ?>
 </div>
- 
+
   <div class="shoppingcart">
   <a href="<?php echo zen_href_link(FILENAME_LOGIN, '', 'SSL'); ?>" aria-label="<?php echo TABLE_HEADING_LOGIN_DETAILS; ?>">
     <i class="fa fa-user spacer2 navitem1t" aria-hidden="true" role="img" aria-label="Login icon" >&nbsp;</i>
 </a>
-    
+
     <a href="<?php echo zen_href_link('contact_us', '', 'SSL'); ?>"  aria-label="<?php echo BOX_INFORMATION_CONTACT; ?>">
     <i class="fa fa-envelope spacer1 navitem2t" aria-hidden="true" role="img" aria-label="Contact icon">&nbsp;</i></a>  
 
@@ -175,7 +175,7 @@ if (isset($flag_disable_header) && $flag_disable_header === true) {
         echo '</div>' . PHP_EOL;
     }?>
 <!-- eof  languages/currencies link header display -->  
-    
+
     <a href="<?php echo zen_href_link(FILENAME_SHOPPING_CART, '', 'NONSSL'); ?>" aria-label="<?php echo BOX_HEADING_SHOPPING_CART; ?>">
     <i class="fa fa-shopping-cart fa-fw badge fa-lg navitem3t" aria-hidden="true" role="img" aria-label="Shopping cart icon">
         <span class="cart-count"><?php echo $_SESSION['cart']->count_contents(); ?></span></i></a>
@@ -203,7 +203,7 @@ if (isset($flag_disable_header) && $flag_disable_header === true) {
 <!--eof branding display-->
 <!--eof header logo and navigation display-->
 
- 
+
 
 <!--bof optional categories tabs navigation display-->
 <?php require($template->get_template_dir('tpl_modules_categories_tabs.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_categories_tabs.php'); ?>

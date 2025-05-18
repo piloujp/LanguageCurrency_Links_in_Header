@@ -19,7 +19,7 @@
             }
         }
         $content .= '</div>' . PHP_EOL;
-        
+
     } elseif (count($lng->catalog_languages) > 1) {
         foreach ($lng->catalog_languages as $key => $value) {
             if ($key != substr($_SESSION['language'],0,2)) {
@@ -27,5 +27,5 @@
             }
         }
     }
-  
+
     echo $content;
